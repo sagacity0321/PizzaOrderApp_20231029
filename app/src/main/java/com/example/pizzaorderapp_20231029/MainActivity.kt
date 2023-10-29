@@ -1,5 +1,6 @@
 package com.example.pizzaorderapp_20231029
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
@@ -23,5 +24,12 @@ class MainActivity : AppCompatActivity() {
         mAdapter = StoreAdapter(this, R.layout.pizza_store_list_item, mPizzaStoreList)
 
         binding.pizzaStoreListView.adapter = mAdapter
+
+        binding.pizzaStoreListView.setOnItemClickListener { adapterView, view, position, l ->
+            val clickedStore = mPizzaStoreList[position]
+
+            val myIntent = Intent(this, ViewStoreDetail::class.java)
+            startActivity(myIntent)
+        }
     }
 }
