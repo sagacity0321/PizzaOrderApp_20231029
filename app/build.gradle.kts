@@ -5,7 +5,11 @@ plugins {
 
 android {
     namespace = "com.example.pizzaorderapp_20231029"
-    compileSdk = 33
+    compileSdk = 34
+
+    dataBinding{
+        enable = true
+    }
 
     defaultConfig {
         applicationId = "com.example.pizzaorderapp_20231029"
@@ -37,6 +41,7 @@ android {
 
 dependencies {
 
+    implementation ("de.hdodenhof:circleimageview:3.1.0")
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.10.0")
